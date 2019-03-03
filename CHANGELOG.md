@@ -1,13 +1,155 @@
 # Ember Changelog
 
-### v3.4.0-beta.2 (August 06, 2018)
+### v3.9.0-beta.2 (February 26, 2019)
 
+- [#17618](https://github.com/emberjs/ember.js/pull/17618) [BUGFIX] Migrate autorun microtask queue to Promise.then
+- [#17649](https://github.com/emberjs/ember.js/pull/17649) [BUGFIX] Revert decorator refactors
+
+### v3.9.0-beta.1 (February 18, 2019)
+
+- [#17470](https://github.com/emberjs/ember.js/pull/17470) [DEPRECATION] Implements the Computed Property Modifier deprecation RFCs
+  * Deprecates `.property()` (see [emberjs/rfcs#0375](https://github.com/emberjs/rfcs/blob/master/text/0375-deprecate-computed-property-modifier.md)
+  * Deprecates `.volatile()` (see [emberjs/rfcs#0370](https://github.com/emberjs/rfcs/blob/master/text/0370-deprecate-computed-volatile.md)
+  * Deprecates computed overridability (see [emberjs/rfcs#0369](https://github.com/emberjs/rfcs/blob/master/text/0369-deprecate-computed-clobberability.md) 
+- [#17488](https://github.com/emberjs/ember.js/pull/17488) [DEPRECATION] Deprecate this.$() in curly components (see [emberjs/rfcs#0386](https://github.com/emberjs/rfcs/blob/master/text/0386-remove-jquery.md))
+- [#17489](https://github.com/emberjs/ember.js/pull/17489) [DEPRECATION] Deprecate Ember.$() (see [emberjs/rfcs#0386](https://github.com/emberjs/rfcs/blob/master/text/0386-remove-jquery.md))
+- [#17540](https://github.com/emberjs/ember.js/pull/17540) [DEPRECATION] Deprecate aliasMethod
+- [#17487](https://github.com/emberjs/ember.js/pull/17487) [BUGFIX] Fix scenario where aliased properties did not update in production mode
+
+### v3.8.0 (February 18, 2019)
+
+- [#17143](https://github.com/emberjs/ember.js/pull/17143) / [#17375](https://github.com/emberjs/ember.js/pull/17375) [FEATURE] Implement Element Modifier Manager RFC (see [emberjs/rfcs#0373](https://github.com/emberjs/rfcs/blob/master/text/0373-Element-Modifier-Managers.md)).
+- [#17054](https://github.com/emberjs/ember.js/pull/17054) / [#17376](https://github.com/emberjs/ember.js/pull/17376) [FEATURE] Implement `array` helper RFC (see [emberjs/rfcs#0318](https://github.com/emberjs/rfcs/blob/master/text/0318-array-helper.md))
+- [#16735](https://github.com/emberjs/ember.js/pull/16735) [BUGFIX] Observed properties not being marked as enum
+- [#17498](https://github.com/emberjs/ember.js/pull/17498) [BUGFIX] Don't remove dep keys in `didUnwatch`
+- [#17467](https://github.com/emberjs/ember.js/pull/17467) [BUGFIX] Fix substate interactions with aborts
+- [#17413](https://github.com/emberjs/ember.js/pull/17413) [BUGFIX] Fix missing import in instance-initializer blueprint for ember-mocha
+- [#17319](https://github.com/emberjs/ember.js/pull/17319) [CLEANUP] Remove deprecated 'POSITIONAL_PARAM_CONFLICT'
+- [#17394](https://github.com/emberjs/ember.js/pull/17394) [CLEANUP] Remove deprecated code in mixins/array
+- [#17244](https://github.com/emberjs/ember.js/pull/17244) / [#17499](https://github.com/emberjs/ember.js/pull/17499) Upgrade to Glimmer VM 0.37.1
+Fixes a few issues:
+  * Usage of positional arguments with custom components.
+  * Forwarding attributes via `...attributes` to a dynamic component.
+  * Prevent errors when rendering many template blocks (`Error: Operand over 16-bits. Got 65536`).
+- [#17166](https://github.com/emberjs/ember.js/pull/17166) Improve performance of get() / set()
+- [#16710](https://github.com/emberjs/ember.js/pull/16710) Deprecation of private `NAME_KEY`
+- [#17216](https://github.com/emberjs/ember.js/pull/17216) Use native Error instead of custom Error subclass.
+- [#17340](https://github.com/emberjs/ember.js/pull/17340) Remove unused `hooks` variable from qunit-rfc-232 util-test blueprint
+- [#17357](https://github.com/emberjs/ember.js/pull/17357) Allow notifyPropertyChange to be imported from @ember/object
+
+### v3.7.3 (February 6, 2019)
+
+- [#17563](https://github.com/emberjs/ember.js/pull/17563) [BUGFIX] Transition.send/trigger call signature
+- [#17552](https://github.com/emberjs/ember.js/pull/17552) [BUGFIX] Support numbers in component names for Angle Brackets
+
+### v3.7.2 (January 22, 2019)
+
+* Upgrade @glimmer/* packages to 0.36.6. Fixes a few issues:
+  * Usage of positional arguments with custom components.
+  * Forwarding attributes via `...attributes` to a dynamic component.
+  * Prevent errors when rendering many template blocks (`Error: Operand over 16-bits. Got 65536`).
+
+### v3.7.1 (January 21, 2019)
+
+- [#17461](https://github.com/emberjs/ember.js/pull/17461) [BUGFIX] Fix substate interactions with aborts
+
+### v3.7.0 (January 7, 2019)
+
+- [#17254](https://github.com/emberjs/ember.js/pull/17254) [BREAKING] Explicitly drop support for Node 4
+- [#17426](https://github.com/emberjs/ember.js/pull/17426) [BUGFIX] Fix 'strict mode does not allow function declarations'
+- [#17431](https://github.com/emberjs/ember.js/pull/17431) [BUGFIX] Fix ability to override a computed.volatile
+- [#17398](https://github.com/emberjs/ember.js/pull/17398) [BUGFIX] Avoid console.trace for every Ember.warn
+- [#17399](https://github.com/emberjs/ember.js/pull/17399) [BUGFIX] Local variable shadowing assert
+- [#17403](https://github.com/emberjs/ember.js/pull/17403) [BUGFIX] Ensure legacy build of template compiler can be loaded.
+- [#17328](https://github.com/emberjs/ember.js/pull/17328) [BUGFIX] Ensure that delayed transition retrys work
+- [#17374](https://github.com/emberjs/ember.js/pull/17374) [BUGFIX] Fix cyclic references on Array.prototype
+- [#17134](https://github.com/emberjs/ember.js/pull/17134) [CLEANUP] Remove deprecated '_router'
+- [#17133](https://github.com/emberjs/ember.js/pull/17133) [CLEANUP] Remove deprecated 'property{Did,Will}Change'
+- [#16898](https://github.com/emberjs/ember.js/pull/16898) Add RFC 232 style util test blueprint for Mocha
+
+### v3.6.1 (December 18, 2018)
+
+- [#17328](https://github.com/emberjs/ember.js/pull/17328) [BUGFIX] Ensure that delayed transition retrys work
+- [#17374](https://github.com/emberjs/ember.js/pull/17374) [BUGFIX] Fix cyclic references on Array.prototype
+
+### v3.6.0 (December 6, 2018)
+
+- [#17025](https://github.com/emberjs/ember.js/pull/17025) / [#17034](https://github.com/emberjs/ember.js/pull/17034) / [#17036](https://github.com/emberjs/ember.js/pull/17036) / [#17038](https://github.com/emberjs/ember.js/pull/17038) / [#17040](https://github.com/emberjs/ember.js/pull/17040) / [#17041](https://github.com/emberjs/ember.js/pull/17041) / [#17061](https://github.com/emberjs/ember.js/pull/17061) [FEATURE] Final stage of the router service RFC (see [emberjs/rfcs#95](https://github.com/emberjs/rfcs/blob/master/text/0095-router-service.md)
+- [#16795](https://github.com/emberjs/ember.js/pull/16795) [FEATURE] Native Class Constructor Update (see [emberjs/rfcs#337](https://github.com/emberjs/rfcs/blob/master/text/0337-native-class-constructor-update.md)
+- [#17188](https://github.com/emberjs/ember.js/pull/17188) / [#17246](https://github.com/emberjs/ember.js/pull/17246) [BUGFIX] Adds a second dist build which targets IE and early Android versions. Enables avoiding errors when using native classes without transpilation. 
+- [#17238](https://github.com/emberjs/ember.js/pull/17238) [DEPRECATION] Deprecate calling `A` as a constructor
+- [#16956](https://github.com/emberjs/ember.js/pull/16956) [DEPRECATION] Deprecate Ember.merge
+- [#17220](https://github.com/emberjs/ember.js/pull/17220) [BUGFIX] Fix cycle detection in Ember.copy
+- [#17227](https://github.com/emberjs/ember.js/pull/17227) [BUGFIX] Fix mouseEnter/Leave event delegation w/o jQuery for SVG & IE11
+- [#17233](https://github.com/emberjs/ember.js/pull/17233) [BUGFIX] Reverts EmberError to be a standard function
+- [#17251](https://github.com/emberjs/ember.js/pull/17251) [BUGFIX] Prevent errors with debug compiled templates in prod.
+- [#17241](https://github.com/emberjs/ember.js/pull/17241) [BUGFIX] Fix line endings of component blueprint on Windows
+- [#17271](https://github.com/emberjs/ember.js/pull/17271) [BUGFIX] Update backburner.js to 2.4.2.
+- [#17184](https://github.com/emberjs/ember.js/pull/17184) [BUGFIX] Ensures removeAllListeners does not break subsequent adds
+- [#17169](https://github.com/emberjs/ember.js/pull/17169) [BUGFIX] Add default implementations of Component lifecycle hooks
+- [#17137](https://github.com/emberjs/ember.js/pull/17137) [BUGFIX] Assert when local variables shadow modifier invocations
+- [#17132](https://github.com/emberjs/ember.js/pull/17132) [BUGFIX] Assert when local variables shadow helper invocations
+- [#17135](https://github.com/emberjs/ember.js/pull/17135) [BUGFIX] Ensure local variables win over helper invocations
+- [#16923](https://github.com/emberjs/ember.js/pull/16923) [BUGFIX] ES6 classes on/removeListener and observes/removeObserver interop
+- [#17153](https://github.com/emberjs/ember.js/pull/17153) [BUGFIX] Blueprints can generate components with a single word name
+- [#16865](https://github.com/emberjs/ember.js/pull/16865) / [#16899](https://github.com/emberjs/ember.js/pull/16899) / [#16914](https://github.com/emberjs/ember.js/pull/16914) / [#16897](https://github.com/emberjs/ember.js/pull/16897) / [#16913](https://github.com/emberjs/ember.js/pull/16913) / [#16894](https://github.com/emberjs/ember.js/pull/16894) / [#16896](https://github.com/emberjs/ember.js/pull/16896) [BUGFIX] Support RFC 232 and RFC 268 style tests with Mocha blueprints
+- [#17051](https://github.com/emberjs/ember.js/pull/17051) Update glimmer-vm packages to 0.36.4
+
+### v3.5.1 (October 29, 2018)
+
+- [#17028](https://github.com/emberjs/ember.js/pull/17028) Mark `defineProperty` as public (yet low level) API.
+- [#17115](https://github.com/emberjs/ember.js/pull/17115) [BUGFIX] Pass the event parameter to sendAction
+- [#17128](https://github.com/emberjs/ember.js/pull/17128) [BUGFIX] Fix sourcemaping issues due to multiple sourcemap directives.
+- [#17130](https://github.com/emberjs/ember.js/pull/17130) [BUGFIX] Ensure that timers scheduled after a system sleep are fired properly.
+
+### v3.5.0 (October 8, 2018)
+
+- [#16978](https://github.com/emberjs/ember.js/pull/16978) [BUGFIX] Properly teardown alias
+- [#16877](https://github.com/emberjs/ember.js/pull/16877) [CLEANUP] Allow routes to be named "array" and "object"
+
+### v3.4.8 (January 22, 2019)
+
+* Upgrade @glimmer/* packages to 0.35.10. Fixes a few issues:
+  * Usage of positional arguments with custom components.
+  * Forwarding attributes via `...attributes` to a dynamic component.
+  * Prevent errors when rendering many template blocks (`Error: Operand over 16-bits. Got 65536`).
+
+### v3.4.7 (December 7, 2018)
+
+- [#17271](https://github.com/emberjs/ember.js/pull/17271) [BUGFIX] Update `backburner.js` to 2.4.2.
+
+### v3.4.6 (October 29, 2018)
+
+- [#17115](https://github.com/emberjs/ember.js/pull/17115) [BUGFIX] Ensure `{{input` continues to pass the event to the actions that it fires.
+- [#17128](https://github.com/emberjs/ember.js/pull/17128) [BUGFIX] Fix invalid sourcemap declarations.
+- [#17130](https://github.com/emberjs/ember.js/pull/17130) [BUGFIX] Ensure that timers scheduled after a system sleep are fired properly.
+
+### v3.4.5 (October 4, 2018)
+
+- [#17029](https://github.com/emberjs/ember.js/pull/17029) [BUGFIX] Update backburner.js to 2.4.0.
+
+### v3.4.4 (September 27, 2018)
+
+- [#17013](https://github.com/emberjs/ember.js/pull/17013) [BUGFIX] Fix rendering of empty content with `{{{...}}}` or `{{...}}` with `htmlSafe('')` in IE11
+
+### v3.4.3 (September 25, 2018)
+
+- [#17003](https://github.com/emberjs/ember.js/pull/17003) [BUGFIX] Fix rendering of empty content with `{{{...}}}` or `{{...}}` with `htmlSafe('')`
+
+### v3.4.2 (September 24, 2018)
+
+- [#16860](https://github.com/emberjs/ember.js/pull/16860) [BUGFIX] Clear chains in ProxyMixin when destroyed
+- [#16999](https://github.com/emberjs/ember.js/pull/16999) [BUGFIX] Fix mouseEnter/Leave event delegation without jQuery
+
+### v3.4.1 (September 10, 2018)
+
+- [#16933](https://github.com/emberjs/ember.js/pull/16933) [BUGFIX] Update glimmer-vm packages to 0.35.8
+
+### v3.4.0 (August 27, 2018)
+
+- [#16603](https://github.com/emberjs/ember.js/pull/16603) [BUGFIX] Support mouseEnter/Leave events w/o jQuery
 - [#16857](https://github.com/emberjs/ember.js/pull/16857) [BUGFIX] Prevents the recursive redefinition of root chains
 - [#16854](https://github.com/emberjs/ember.js/pull/16854) [BUGFIX] Don't thread FactoryManager through createComponent
-- [#16853](https://github.com/emberjs/ember.js/pull/16853) [BUGFIX] Allow ArrayProxy#pushObjects to accept ArrayProxy again
-
-### v3.4.0-beta.1 (July 16, 2018)
-
 - [#16773](https://github.com/emberjs/ember.js/pull/16773) [FEATURE] Custom component manager (see [emberjs/rfcs#213](https://github.com/emberjs/rfcs/blob/master/text/0213-custom-components.md) for more details)
 - [#16708](https://github.com/emberjs/ember.js/pull/16708) [FEATURE] Angle bracket component invocation (see [emberjs/rfcs#311](https://github.com/emberjs/rfcs/blob/master/text/0311-angle-bracket-invocation.md) for more details)
 - [#16744](https://github.com/emberjs/ember.js/pull/16744) [DEPRECATION] Deprecate `component#sendAction` (see [emberjs/rfcs#335](https://github.com/emberjs/rfcs/blob/master/text/0335-deprecate-send-action.md) for more details)
@@ -18,11 +160,16 @@
 - [#16794](https://github.com/emberjs/ember.js/pull/16794) [BUGFIX] Fix instance-initializer-test blueprint for new QUnit testing API ([emberjs/rfcs#232](https://github.com/emberjs/rfcs/pull/232))
 - [#16797](https://github.com/emberjs/ember.js/pull/16797) [BUGFIX] Drop autorun assertion
 
+### v3.3.2 (August 20, 2018)
+
+- [#16853](https://github.com/emberjs/ember.js/pull/16853) [BUGFIX] Allow ArrayProxy#pushObjects to accept ArrayProxy again
+- [#16870](https://github.com/emberjs/ember.js/pull/16870) [BUGFIX] Enable @ember/object#get to be called with an empty string
+
 ### v3.3.1 (July 23, 2018)
 
 - [#16836](https://github.com/emberjs/ember.js/pull/16836/commits) [DOC] Fix Broken 3.3 API Documentation
 
-### v3.3.0 (July 16, 2018) 
+### v3.3.0 (July 16, 2018)
 
 - [#16687](https://github.com/emberjs/ember.js/pull/16687) [FEATURE] Implement optional jQuery integration (see [emberjs/rfcs#294](https://github.com/emberjs/rfcs/blob/master/text/0294-optional-jquery.md) for more details).
 - [#16690](https://github.com/emberjs/ember.js/pull/16690) [DEPRECATION] [emberjs/rfcs#294](emberjs/rfcs#294) Deprecate accessing `jQuery.Event#originalEvent`.
@@ -77,6 +224,11 @@
 - [#16433](https://github.com/emberjs/ember.js/pull/16433) [CLEANUP] Remove `content` alias.
 - [#16462](https://github.com/emberjs/ember.js/pull/16462) [CLEANUP] Remove deprecated `MODEL_FACTORY_INJECTIONS`.
 - [emberjs/rfcs#286](https://github.com/emberjs/rfcs/blob/master/text/0286-block-let-template-helper.md) [FEATURE] Enabled block `let` handlebars helper by default.
+
+### v3.1.4 (August 07, 2018)
+
+- [#16565](https://github.com/emberjs/ember.js/pull/16565) Fix template / component caching during rendering.
+- [#16853](https://github.com/emberjs/ember.js/pull/16853) [BUGFIX] Allow ArrayProxy#pushObjects to accept ArrayProxy again
 
 ### v3.1.3 (June 21, 2018)
 - [#16754](https://github.com/emberjs/ember.js/pull/16754) [BUGFIX] Fix container destroy timing

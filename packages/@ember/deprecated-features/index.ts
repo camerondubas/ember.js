@@ -1,21 +1,17 @@
+/* eslint-disable no-implicit-coercion */
+
+// These versions should be the version that the deprecation was _introduced_,
+// not the version that the feature will be removed.
+
 export const SEND_ACTION = !!'3.4.0';
-export const PROPERTY_BASED_DESCRIPTORS = !!'3.2.0';
 export const EMBER_EXTEND_PROTOTYPES = !!'3.2.0-beta.5';
-export const DEPRECATE_OPTIONS_MISSING = !!'2.1.0-beta.1';
-export const DEPRECATE_ID_MISSING = !!'2.1.0-beta.1';
-export const DEPRECATE_UNTIL_MISSING = !!'2.1.0-beta.1';
 export const RUN_SYNC = !!'3.0.0-beta.4';
-export const REGISTRY_RESOLVER_AS_FUNCTION = !!'2.3.0-beta.3';
 export const LOGGER = !!'3.2.0-beta.1';
-export const POSITIONAL_PARAM_CONFLICT = !!'3.1.0-beta.1';
-export const DID_INIT_ATTRS = !!'2.6.0-beta.1';
-export const PROPERTY_WILL_CHANGE = !!'3.1.0-beta.1';
-export const PROPERTY_DID_CHANGE = !!'3.1.0-beta.1';
-export const ROUTER_ROUTER = !!'3.2.0-beta.1';
-export const ORPHAN_OUTLET_RENDER = !!'2.11.0-beta.1';
-export const ARRAY_AT_EACH = !!'3.1.0-beta.1';
-export const TARGET_OBJECT = !!'2.18.0-beta.1';
-export const RENDER_HELPER = !!'2.11.0-beta.1';
-export const BINDING_SUPPORT = !!'2.7.0-beta.1';
-export const MAP = !!'3.3.0-beta.1';
-export const ORDERED_SET = !!'3.3.0-beta.1';
+export const MERGE = !!'3.6.0-beta.1';
+export const HANDLER_INFOS = !!'3.9.0';
+export const ROUTER_EVENTS = !!'3.9.0';
+export const TRANSITION_STATE = !!'3.9.0';
+export const COMPONENT_MANAGER_STRING_LOOKUP = !!'3.8.0';
+export const JQUERY_INTEGRATION = !!'3.9.0';
+export const ALIAS_METHOD = !!'3.9.0';
+export const APP_CTRL_ROUTER_PROPS = !!'4.0.0';
